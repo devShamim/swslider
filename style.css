@@ -1,0 +1,90 @@
+:root{
+  --gutter: 15px;
+  --gutter-fix: var(--gutter);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  width: 1140px;
+  margin: 200px auto 0;
+  /* border: 1px solid red; */
+}
+
+.swcarousel {
+  position: relative;
+}
+
+.swcarousel__content {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  margin: 0 calc(var(--gutter-fix) - var(--gutter-fix)*2);
+  transition: width 5s;
+}
+
+.swcarousel__slide {
+  position: absolute;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  padding: 0 var(--gutter);
+  transition: left .4s cubic-bezier(.47,.13,.15,.89);
+}
+
+.swcarousel__slide img{
+  width: 100%;
+}
+
+/* slider nav */
+.swcarousel__nav{
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+.swcarousel__nav__item{
+  width: 30px;
+  height: 30px;
+  background: #eee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  pointer-events: all;
+}
+.swcarousel__nav--left{
+  margin-left: -15px;
+}
+.swcarousel__nav--right{
+  margin-right: -15px;
+}
+
+/* slider bullets */
+.swcarousel__bullets{
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.swcarousel__bullet{
+  margin: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
